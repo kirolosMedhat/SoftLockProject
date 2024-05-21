@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', [FileController::class, 'create']);
-Route::post('/process', [FileController::class, 'process'])->name('process');
+Route::get('/', [FilesController::class, 'create'])->name('create');
+Route::post('/upload', [FilesController::class, 'upload'])->name('upload');
+Route::post('/encrypt', [FilesController::class, 'encrypt'])->name('encrypt');
+Route::post('/decrypt', [FilesController::class, 'decrypt'])->name('decrypt');
